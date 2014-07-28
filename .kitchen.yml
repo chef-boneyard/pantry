@@ -8,7 +8,10 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: ubuntu-12.04
+  # To run test-kitchen for OS X, create a box for 10.9, and add it to vagrant. See for example,
+  # https://github.com/timsutton/osx-vm-templates
+  # https://github.com/opscode/bento/blob/master/packer/macosx-10.9.json
+  - name: macosx-10.9
 
 suites:
   - name: default

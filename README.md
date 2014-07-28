@@ -1,6 +1,6 @@
 # pantry Cookbook
 
-Pantry is a workstation automation framework for Chef. It is part of the [Chef Pantry project](https://github.com/opscode/pantry).
+Pantry is a workstation automation cookbook and framework for Chef.
 
 ## Requirements
 
@@ -11,20 +11,32 @@ Pantry is a workstation automation framework for Chef. It is part of the [Chef P
 
 * OS X 10.9
 
+See [Bugs](#bugs), below.
+
 **Future (planned)**: Windows, Linux (Debian and RHEL families).
 
 ### Cookbooks:
 
-* build-essential
-* homebrew
+* [build-essential](https://supermarket.getchef.com/cookbooks/build-essential)
+* [homebrew](https://supermarket.getchef.com/cookbooks/homebrew)
+* [packages](https://supermarket.getchef.com/cookbooks/packages)
 
 ## Attributes
 
-* `node['packages']`: This attribute space will be used for lists of packages to install using the native/default package manager for the OS.
+* `node['homebrew']['casks']`: This attribute is used to install [Homebrew Casks](http://caskroom.io/), the default method for installing OS X Applications with this cookbook. It is used when including the `homebrew::install_casks` recipe, which is done by default in this cookbook's `mac_os_x` recipe. The value should be specified as an Array of [cask names](https://github.com/caskroom/homebrew-cask/tree/master/Casks).
+* `node['homebrew']['formulas']`: This attribute is used to install [Homebrew Formulas](http://brew.sh/), the default method for installing "packages" on OS X with this cookbook. It is used when including the `homebrew::install_formulas` recipe, which is done by default in this cookbook's `mac_os_x` recipe. The value should be specified as an Array of [formula package names](https://github.com/Homebrew/homebrew/tree/master/Library/Formula).
+* `node['packages']`: This attribute is used to install OS packages on Linux using the native package manager. It is used when including the `packages` recipe, which is done by default in this cookbook's non-OS X [recipes (`windows`, `debian` and `rhel`)](#bugs). The value should be specified as an Array of package names that are available from the distribution's package repositories.
 
 ## Recipes
 
 ### default
+
+This recipe will include the node's platform-family recipe.
+
+## Bugs
+
+* [Windows support is not yet implemented](https://github.com/opscode-cookbooks/pantry/issues/1).
+* [Linux support is not yet implemented](https://github.com/opscode-cookbooks/pantry/issues/2).
 
 ## License and Author
 
