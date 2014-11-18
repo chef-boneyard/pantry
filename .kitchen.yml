@@ -18,8 +18,8 @@ platforms:
 suites:
   - name: workstation
     run_list:
-      - recipe[pantry::default]
       - recipe[build-essential]
+      - recipe[pantry]
       - recipe[homebrew]
       - recipe[homebrew::cask]
       - recipe[homebrew::install_formulas]
