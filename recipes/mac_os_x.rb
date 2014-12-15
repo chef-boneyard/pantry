@@ -5,9 +5,6 @@
 # Copyright (C) 2014, Chef Software, Inc. <legal@getchef.com>
 #
 
-chef_gem 'plist'
-ohai('system_profile') { plugin 'system_profile' }.run_action(:reload)
-
 directory '/opt/homebrew-cask' do
   mode 00775
 end
