@@ -1,3 +1,7 @@
+# v0.1.2
+
+* Remove plist installation and plugin loading
+
 # v0.1.1
 
 * Ensure `/Library/Caches` has correct permissions for homebrew cask.
