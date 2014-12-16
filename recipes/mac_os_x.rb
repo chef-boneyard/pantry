@@ -4,6 +4,7 @@
 #
 # Copyright (C) 2014, Chef Software, Inc. <legal@getchef.com>
 #
+include_recipe 'build-essential'
 
 directory '/opt/homebrew-cask' do
   mode 00775
@@ -17,8 +18,7 @@ directory '/Library/Caches' do
   mode 01777
 end
 
-# Chef::Provider::User::Dscl uses this directory, but nothing actually creates it by default.
-# https://github.com/opscode/chef/issues/1634
-directory '/var/db/shadow/hash' do
-  recursive true
-end
+include_recipe 'homebrew'
+include_recipe 'homebrew::cask'
+include_recipe 'homebrew::install_formulas'
+include_recipe 'homebrew::install_casks'
