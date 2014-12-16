@@ -1,3 +1,7 @@
+# v0.1.3
+
+* Include build-essential and homebrew recipes in `mac_os_x` recipe (#4)
+
 # v0.1.2
 
 * Remove plist installation and plugin loading
