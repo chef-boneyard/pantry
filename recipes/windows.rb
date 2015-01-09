@@ -1,8 +1,10 @@
 #
 # Cookbook Name:: pantry
-# Attributes:: default
 #
 # Copyright (C) 2014, Chef Software, Inc. <legal@getchef.com>
 #
+include_recipe 'chocolatey'
 
-default['chocolatey']['packages'] = []
+node['chocolatey']['packages'].each do |p|
+  chocolatey p
+end
