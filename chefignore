@@ -6,3 +6,5 @@
 */spec
 */test
 */vendor
+.git
+.kitchen
