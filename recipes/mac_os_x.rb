@@ -6,14 +6,6 @@
 #
 include_recipe 'build-essential'
 
-directory '/opt/homebrew-cask' do
-  mode 00775
-end
-
-directory '/opt/homebrew-cask/Caskroom' do
-  mode 00775
-end
-
 directory '/Library/Caches' do
   mode 01777
 end
