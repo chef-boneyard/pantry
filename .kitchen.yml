@@ -7,6 +7,8 @@ driver:
 provisioner:
   name: chef_zero
   data_path: test/shared
+  chef_omnibus_install_options: -P chefdk
+  chef_omnibus_root: /opt/chefdk
 
 platforms:
   # To run test-kitchen for OS X, create a box for 10.9 and 10.10, and
