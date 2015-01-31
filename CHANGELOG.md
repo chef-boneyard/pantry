@@ -1,3 +1,7 @@
+# v0.2.1
+
+* Make use of `homebrew::install_taps` recipe
+
 # v0.2.0
 
 * Initial Windows support (Thanks Jay!)
