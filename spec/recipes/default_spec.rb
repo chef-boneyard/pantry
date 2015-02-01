@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'pantry::default' do
   context 'Mac OS X' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.10').
+      ChefSpec::ServerRunner.new(:platform => 'mac_os_x', :version => '10.10').
         converge(described_recipe)
     end
 
@@ -19,7 +19,7 @@ describe 'pantry::default' do
 
   context 'Windows' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'windows', version: '2012').
+      ChefSpec::ServerRunner.new(:platform => 'windows', :version => '2012').
         converge(described_recipe)
     end
 
