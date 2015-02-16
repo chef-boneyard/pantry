@@ -1,14 +1,30 @@
 require 'spec_helper'
 
-# Write unit tests with ChefSpec - https://github.com/sethvargo/chefspec#readme
 describe 'pantry::default' do
-  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+  context 'Mac OS X' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(:platform => 'mac_os_x', :version => '10.10').
+        converge(described_recipe)
+    end
 
-  it 'logs a sample message' do
-    expect(chef_run).to write_log 'replace this with a meaningful resource'
+    before do
+      # Homebrew Command Stubs
+      stub_command('which git').and_return('/usr/local/bin/git')
+    end
+
+    it 'includes pantry::mac_os_x recipe' do
+      expect(chef_run).to include_recipe('pantry::mac_os_x')
+    end
   end
 
-  it 'does something' do
-    pending 'Replace this with meaningful tests'
+  context 'Windows' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(:platform => 'windows', :version => '2012').
+        converge(described_recipe)
+    end
+
+    it 'includes pantry::windows recipe' do
+      expect(chef_run).to include_recipe('pantry::windows')
+    end
   end
 end

@@ -11,6 +11,7 @@ FoodCritic::Rake::LintTask.new(:foodcritic) do |t|
     :fail_tags => ['any'],
     :tags => [
       '~FC003',
+      '~FC007',
       '~FC015'
     ]
   }
