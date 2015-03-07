@@ -6,3 +6,4 @@
 #
 
 default['chocolatey']['packages'] = []
+default['pantry']['repositories'] = {}
