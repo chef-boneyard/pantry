@@ -47,7 +47,7 @@ def create_repository(dir)
     end
   end
 
-  git directory do
+  git dir do
     action :checkout
     group new_resource.group
     repository new_resource.repository
@@ -55,9 +55,9 @@ def create_repository(dir)
     user new_resource.user
   end
 
-  execute "checkout master on #{directory}" do
+  execute "checkout master on #{dir}" do
     command 'git checkout master'
-    cwd     directory
+    cwd     dir
     user    new_resource.user
     group   new_resource.group
   end
