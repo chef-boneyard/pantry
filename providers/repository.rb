@@ -9,7 +9,7 @@ action :create do
     Chef::Log.info "#{@new_resource} already exists - nothing to do."
   else
     converge_by("Create #{@new_resource}") do
-      dir = expand_directory_path(@new_resource.directory)
+      dir = expand_directory_path(@new_resource.directory, @new_resource.user)
       create_repository(dir)
     end
   end
@@ -18,7 +18,7 @@ end
 action :delete do
   if @current_resource.exists
     converge_by("Delete #{@new_resource}") do
-      dir = expand_directory_path(@new_resource.directory)
+      dir = expand_directory_path(@new_resource.directory, @new_resource.user)
       delete_repository(dir)
     end
   else
@@ -27,7 +27,7 @@ action :delete do
 end
 
 def load_current_resource
-  directory = expand_directory_path(@new_resource.directory)
+  directory = expand_directory_path(@new_resource.directory, @new_resource.user)
   @current_resource = Chef::Resource::PantryRepository.new(@new_resource.name)
   @current_resource.name(@new_resource.name)
   @current_resource.group(@new_resource.group)
@@ -92,7 +92,7 @@ def subdirectories(dir)
   return directories.reject { |subdirectory| ::File.directory?(subdirectory) }
 end
 
-def expand_directory_path(path)
+def expand_directory_path(path, machine_user)
   home_dir = ENV['HOME']
   ENV['HOME'] = Dir.home(machine_user)
   destination = ::File.expand_path(path)
