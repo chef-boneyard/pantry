@@ -27,4 +27,26 @@ describe 'pantry::default' do
       expect(chef_run).to include_recipe('pantry::windows')
     end
   end
+
+  context 'Debian Linux' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(:platform => 'debian', :version => '7.7').
+        converge(described_recipe)
+    end
+
+    it 'includes pantry::debian recipe' do
+      expect(chef_run).to include_recipe('pantry::debian')
+    end
+  end
+
+  context 'RHEL Linux' do
+    let(:chef_run_centos) do
+      ChefSpec::ServerRunner.new(:platform => 'centos', :version => '7.0').
+        converge(described_recipe)
+    end
+
+    it 'includes pantry::rhel recipe' do
+      expect(chef_run_centos).to include_recipe('pantry::rhel')
+    end
+  end
 end
