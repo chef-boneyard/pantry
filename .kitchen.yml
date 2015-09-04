@@ -21,8 +21,8 @@ platforms:
   - name: macosx-10.10
     driver:
       box: chef/macosx-10.10
-  - name: centos-7.0
-  - name: debian-7.7
+  - name: centos-7.1
+  - name: debian-8.1
 
 suites:
   # this makes for silly names, but this will be different across platforms
@@ -35,16 +35,16 @@ suites:
           - redis
         casks:
           - caffeine
-    excludes: ["centos-7.0", "debian-7.7"]
+    excludes: ["centos-7.1", "debian-8.1"]
 
   - name: debian
     run_list:
       - recipe[pantry]
     attributes:
-    excludes: ["macosx-10.9", "macosx-10.10", "centos-7.0"]
+    excludes: ["macosx-10.9", "macosx-10.10", "centos-7.1"]
 
   - name: rhel
     run_list:
       - recipe[pantry]
     attributes:
-    excludes: ["macosx-10.9", "macosx-10.10", "debian-7.7"]
+    excludes: ["macosx-10.9", "macosx-10.10", "debian-8.1"]
