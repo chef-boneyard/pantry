@@ -24,7 +24,7 @@ include Chef::Mixin::ShellOut
 module Pantry
   module Helpers
     def wifi_interface
-      shell_out(%Q(networksetup -listallhardwareports | awk '$3=="Wi-Fi" { getline; print $2 }')).stdout.chomp
+      shell_out(%(networksetup -listallhardwareports | awk '$3=="Wi-Fi" { getline; print $2 }')).stdout.chomp
     end
 
     def wifi_powered_on?
