@@ -14,6 +14,8 @@ There is another known project using the "pantry" name called [Ironfan Pantry](h
 
 * OS X 10.9, 10.10
 * Windows
+* Debian Linux
+* RHEL Linux
 
 Because OS X is not readily available and not redistributable as a base box for Vagrant/VMware Fusion, older versions of OS X will not be supported as it is not easily tested using test kitchen.
 
