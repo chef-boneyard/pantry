@@ -21,8 +21,6 @@ Because OS X is not readily available and not redistributable as a base box for 
 
 Windows is known to work, but this cookbook does not have test kitchen coverage until test kitchen itself fully supports Windows.
 
-**Future (planned)**: Linux (Debian and RHEL families). See [Bugs](#bugs), below.
-
 ### Cookbooks:
 
 * [build-essential](https://supermarket.getchef.com/cookbooks/build-essential)
@@ -36,8 +34,6 @@ Windows is known to work, but this cookbook does not have test kitchen coverage 
 * `node['homebrew']['taps']`: This attribute is used to install [Homebrew Taps](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/brew-tap.mdh/), the default method for installing "packages repositories" on OS X with this cookbook. It is used when including the `homebrew::install_taps` recipe, which is done by default in this cookbook's `mac_os_x` recipe. The value should be specified as an Array of [tap names](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Interesting-Taps-%26-Branches.md).
 * `node['packages']`: This attribute is used to install OS packages on Linux using the native package manager. It is used when including the `packages` recipe, which is done by default in this cookbook's non-OS X [recipes (`windows`, `debian` and `rhel`)](#bugs). The value should be specified as an Array of package names that are available from the distribution's package repositories.
 * `node['chocolatey']['packages']`: This attribute is used to install [Chocolatey packages](https://chocolatey.org/), the recommended method for installing "packages" on Windows with this cookbook. It is used in the `windows` recipe, which is included by default on `windows` platform systems. The value should be specified as an Array of chocolatey [package names](https://chocolatey.org/packages).
-
-**Note** Linux platforms are not officially supported by Pantry yet and things may work with or without modification.
 
 ## Recipes
 

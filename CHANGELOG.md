@@ -1,3 +1,8 @@
+# v0.3.0
+
+* Added rudimentary debian family support via `packages` cookbook.
+  [[GH-14]](https://github.com/opscode-cookbooks/pantry/issues/14)
+
 # v0.2.1
 
 * Make use of `homebrew::install_taps` recipe
