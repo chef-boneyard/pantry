@@ -1,3 +1,7 @@
+pantry Cookbook CHANGELOG
+=========================
+This file is used to list changes made in each version of the pantry cookbook.
+
 # v0.2.1
 
 * Make use of `homebrew::install_taps` recipe
