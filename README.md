@@ -1,5 +1,8 @@
 # pantry Cookbook
 
+[![Build Status](https://travis-ci.org/chef-cookbooks/pantry.svg?branch=master)](http://travis-ci.org/chef-cookbooks/pantry)
+[![Cookbook Version](https://img.shields.io/cookbook/v/pantry.svg)](https://supermarket.chef.io/cookbooks/pantry)
+
 Pantry is a workstation automation cookbook and cookbook framework for Chef. The intention is that this cookbook handles common annoyances and holds primitives usable for other workstation automation cookbooks to take over. For example, features not yet present in homebrew or chocolatey cookbooks may be added here.
 
 This cookbook is used as part of the [Pantry Chef Repository](https://github.com/opscode/pantry-chef-repo), and that repository is the primary entry point into using this cookbook.
