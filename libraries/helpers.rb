@@ -42,7 +42,7 @@ module Pantry
     private
 
     def systemsetup_on?(getflag)
-      getflag.gsub!(/-/, '') if getflag.start_with?('-')
+      getflag.delete!('-') if getflag.start_with?('-')
       getflag.gsub!(/^/, 'get') unless getflag.start_with?('get')
       shell_out("systemsetup -#{getflag} | awk '{print $NF}'").stdout.chomp.eql?('On')
     end

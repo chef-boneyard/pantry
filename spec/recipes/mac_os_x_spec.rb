@@ -18,6 +18,6 @@ describe 'pantry::mac_os_x' do
   end
 
   it 'creates /Library/Caches directory' do
-    expect(chef_run).to create_directory('/Library/Caches').with(:mode => 01777)
+    expect(chef_run).to create_directory('/Library/Caches').with(mode: 01777)
   end
 end
