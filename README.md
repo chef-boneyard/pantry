@@ -28,9 +28,9 @@ Windows is known to work, but this cookbook does not have test kitchen coverage 
 
 ### Cookbooks:
 
-* [build-essential](https://supermarket.getchef.com/cookbooks/build-essential)
-* [homebrew](https://supermarket.getchef.com/cookbooks/homebrew)
-* [packages](https://supermarket.getchef.com/cookbooks/packages)
+* [build-essential](https://supermarket.chef.io/cookbooks/build-essential)
+* [homebrew](https://supermarket.chef.io/cookbooks/homebrew)
+* [packages](https://supermarket.chef.io/cookbooks/packages)
 
 ## Attributes
 
@@ -50,7 +50,7 @@ This recipe will include the node's platform-family recipe. For example, `mac_os
 
 ## Bugs
 
-For issues with this cookbook specifically, [use this repository](https://github.com/opscode-cookbooks/pantry).
+For issues with this cookbook specifically, [use this repository](https://github.com/chef-cookbooks/pantry).
 
 For issues with the pantry project as a whole, [use the pantry-chef-repo](https://github.com/opscode/pantry-chef-repo).
 

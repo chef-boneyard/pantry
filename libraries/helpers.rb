@@ -2,7 +2,7 @@
 # Cookbook Name:: pantry
 # Libraries:: helpers
 #
-# Author:: Joshua Timberman <jtimberman@getchef.com>
+# Author:: Joshua Timberman <jtimberman@chef.io>
 # Copyright:: Copyright (c) 2014, Joshua Timberman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
