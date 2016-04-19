@@ -4,7 +4,7 @@ describe 'pantry::default' do
   context 'Mac OS X' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new(platform: 'mac_os_x', version: '10.10')
-        .converge(described_recipe)
+                            .converge(described_recipe)
     end
 
     before do
@@ -24,7 +24,7 @@ describe 'pantry::default' do
     end
     let(:chef_run) do
       ChefSpec::ServerRunner.new(platform: 'windows', version: '2012')
-        .converge(described_recipe)
+                            .converge(described_recipe)
     end
 
     it 'includes pantry::windows recipe' do
@@ -36,7 +36,7 @@ describe 'pantry::default' do
   context 'Debian Linux' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new(platform: 'debian', version: '7.7')
-        .converge(described_recipe)
+                            .converge(described_recipe)
     end
 
     it 'includes pantry::debian recipe' do
@@ -47,7 +47,7 @@ describe 'pantry::default' do
   context 'RHEL Linux' do
     let(:chef_run_centos) do
       ChefSpec::ServerRunner.new(platform: 'centos', version: '7.0')
-        .converge(described_recipe)
+                            .converge(described_recipe)
     end
 
     it 'includes pantry::rhel recipe' do
