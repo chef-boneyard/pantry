@@ -23,3 +23,5 @@ group :kitchen_cloud do
   gem 'kitchen-digitalocean'
   gem 'kitchen-ec2'
 end
+
+gem 'stove'
