@@ -2,6 +2,18 @@ pantry Cookbook CHANGELOG
 =========================
 This file is used to list changes made in each version of the pantry cookbook.
 
+## 1.0.0 (2016-09-15)
+- Implementation of repository management.
+- Fix issue with directory reference
+- Pass in user when expanding the directory path
+- Update platforms in Test Kitchen [skip-ci]
+- Add maintainers files
+- Add rakefile for testing
+- Exclude FC040
+- Cookstyle updates
+- Remove version constraints and depend on build-essential
+- Require Chef 12.1
+
 # v0.2.1
 
 * Make use of `homebrew::install_taps` recipe
