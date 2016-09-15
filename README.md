@@ -39,6 +39,15 @@ Windows is known to work, but this cookbook does not have test kitchen coverage 
 * `node['homebrew']['taps']`: This attribute is used to install [Homebrew Taps](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/brew-tap.mdh/), the default method for installing "packages repositories" on OS X with this cookbook. It is used when including the `homebrew::install_taps` recipe, which is done by default in this cookbook's `mac_os_x` recipe. The value should be specified as an Array of [tap names](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Interesting-Taps-%26-Branches.md).
 * `node['packages']`: This attribute is used to install OS packages on Linux using the native package manager. It is used when including the `packages` recipe, which is done by default in this cookbook's non-OS X [recipes (`windows`, `debian` and `rhel`)](#bugs). The value should be specified as an Array of package names that are available from the distribution's package repositories.
 * `node['chocolatey']['packages']`: This attribute is used to install [Chocolatey packages](https://chocolatey.org/), the recommended method for installing "packages" on Windows with this cookbook. It is used in the `windows` recipe, which is included by default on `windows` platform systems. The value should be specified as an Array of chocolatey [package names](https://chocolatey.org/packages).
+* `node['pantry']['repositories']`: This attribute is used to git clone various repositories locally. It is used when including the `repositories` recipe, which is done by default in `pantry::default`. The value should be specified as a Hash as follows:
+    "repositories": {
+      "pantry-cookbook": {
+        "source": "https://github.com/opscode-cookbooks/pantry.git",
+        "destination": "~/src/cookbooks/pantry"
+      }
+    }
+* `node['pantry']['user']`: This attribute is required when running `pantry::repositories` and is the user under which the repository will be cloned.
+* `node['pantry']['group']`: This attribute is required when running `pantry::repositories` and is the group under which the repository will be cloned.
 
 **Note** Linux platforms are not officially supported by Pantry yet and things may work with or without modification.
 
@@ -46,7 +55,11 @@ Windows is known to work, but this cookbook does not have test kitchen coverage 
 
 ### default
 
-This recipe will include the node's platform-family recipe. For example, `mac_os_x`.
+This recipe will include the node's platform-family recipe. For example, `mac_os_x`. It will also include `pantry::repositories`.
+
+### repositories
+
+This recipe will run the `pantry_repository` resource against `node['pantry']['repositories']`.
 
 ## Bugs
 
