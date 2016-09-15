@@ -1,4 +1,4 @@
-node['pantry']['repositories'].each do |name, config|
+node['pantry']['repositories'].each do |_name, config|
   pantry_repository config['destination'] do
     repository config['source']
     user node['pantry']['user']

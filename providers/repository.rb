@@ -72,7 +72,7 @@ def delete_repository(dir)
 end
 
 def repository_exists?(path)
-  Chef::Log.debug "Checking to see if this repository exists at path: '#{ path }'"
+  Chef::Log.debug "Checking to see if this repository exists at path: '#{path}'"
   ::File.directory?("#{path}/.git")
 end
 
@@ -89,7 +89,7 @@ def subdirectories(dir)
     directories.push(subdirectory)
   end
 
-  return directories.reject { |subdirectory| ::File.directory?(subdirectory) }
+  directories.reject { |subdirectory| ::File.directory?(subdirectory) }
 end
 
 def expand_directory_path(path, machine_user)
@@ -98,5 +98,5 @@ def expand_directory_path(path, machine_user)
   destination = ::File.expand_path(path)
   ENV['HOME'] = home_dir
 
-  return destination
+  destination
 end
