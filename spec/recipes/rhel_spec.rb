@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: pantry
+# Cookbook:: pantry
 # Spec:: rhel
 #
 

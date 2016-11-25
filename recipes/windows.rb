@@ -1,7 +1,7 @@
 #
-# Cookbook Name:: pantry
+# Cookbook:: pantry
 #
-# Copyright (C) 2014, Chef Software, Inc. <legal@chef.io>
+# Copyright:: 2014-2016, Chef Software, Inc. <legal@chef.io>
 #
 include_recipe 'chocolatey'
 
