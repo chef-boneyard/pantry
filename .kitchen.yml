@@ -22,7 +22,7 @@ platforms:
     driver:
       box: chef/macosx-10.10
   - name: centos-7.2
-  - name: debian-8.4
+  - name: debian-8.6
 
 suites:
   # this makes for silly names, but this will be different across platforms
