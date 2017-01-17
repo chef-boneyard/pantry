@@ -23,7 +23,7 @@ namespace :style do
         fail_tags: ['any'],
         progress: true,
         context: true,
-        exclude_paths: ['**/spec/**', '**/test/**']
+        exclude_paths: ['**/spec/**', '**/test/**'],
       }
     end
   rescue LoadError

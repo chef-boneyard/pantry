@@ -7,7 +7,7 @@
 include_recipe 'build-essential'
 
 directory '/Library/Caches' do
-  mode "1777"
+  mode '1777'
 end
 
 include_recipe 'homebrew'

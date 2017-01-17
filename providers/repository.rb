@@ -79,7 +79,7 @@ end
 def subdirectories(dir)
   directories = []
   dir.split('/').each_with_index do |value, index|
-    next if index == 0
+    next if index.zero?
     if index == 1
       directories.push(value)
       next
